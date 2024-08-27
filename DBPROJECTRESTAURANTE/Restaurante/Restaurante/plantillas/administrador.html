@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        {% include "header.html" %} 
+    </header>
+    <nav class="menu-admin">
+        {% include "menu_admin.html" %} 
+    </nav>
+    {% include "footer.html" %}
+</body>
+</html>
+
+<style>
+    /* styles.css */
+    body {
+        background-color: blanchedalmond;
+    }
+    
+
+.menu-admin {
+    margin-top: 70px; /* Ajusta el valor según el espacio deseado entre el menú y el encabezado */
+}
+
+</style>

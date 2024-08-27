@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de las Mesas</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Restaurante</h1>
+            <nav>
+                <ul>
+                    <li><a href="?accion=inicio_cli">Inicio</a></li>
+                    <li><a href="?accion=estado_mesas">Reservas</a></li> 
+                    <li><a href="?accion=inicio">Salir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Estado de las Mesas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Número de Mesa</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mesa, estado in estado_mesas.items %}
+                    <tr>
+                        <td>{{ mesa }}</td>
+                        <td>{% if estado %}<span class="reserved">Reservado</span>{% else %}Disponible{% endif %}</td>
+                        <td>
+                            {% if not estado %}
+                                <button class="reserve-button" onclick="location.href='?accion=reservar_mesa'">Reservar</button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+<style>
+    /* Estilos generales */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa; /* Color de fondo del cuerpo */
+        margin: 0; /* Eliminar el margen predeterminado del cuerpo */
+        padding: 0; /* Eliminar el relleno predeterminado del cuerpo */
+    }
+
+    .container {
+        max-width: 1200px; /* Ancho máximo del contenedor */
+        margin: 0 auto; /* Centrar el contenedor */
+        padding: 20px; /* Añadir relleno al contenedor */
+        position: relative; /* Posición relativa para contenedor */
+    }
+
+    header {
+        background-color: #343a40; /* Color de fondo del encabezado */
+        padding: 10px 0; /* Añadir relleno superior e inferior */
+        position: fixed; /* Fijar el encabezado */
+        width: 100%; /* Ancho completo */
+        top: 0; /* Arriba */
+        left: 0; /* Izquierda */
+        z-index: 1000; /* Colocar el encabezado por encima de otros elementos */
+    }
+
+    header .container {
+        display: flex; /* Utilizar flexbox para alinear elementos */
+        justify-content: space-between; /* Alinear elementos a los extremos */
+        align-items: center; /* Alinear elementos verticalmente al centro */
+    }
+
+    header h1 {
+        color: #fff; /* Color del texto del encabezado */
+        margin: 0; /* Eliminar el margen superior e inferior */
+        font-size: 20px; /* Tamaño de la fuente del título */
+    }
+
+    header h2 {
+        color: #fff; /* Color del texto del encabezado */
+        margin-top: 0; /* Eliminar el margen superior */
+        font-size: 18px; /* Tamaño de la fuente del título */
+        text-align: center; /* Alinear texto al centro */
+    }
+
+    nav ul {
+        list-style-type: none; /* Eliminar los marcadores de lista */
+        padding: 0; /* Eliminar el relleno */
+        margin: 0; /* Eliminar el margen */
+        text-align: right; /* Alinear elementos a la derecha */
+    }
+
+    nav ul li {
+        display: inline; /* Mostrar elementos en línea */
+        margin-left: 20px; /* Añadir espacio entre elementos */
+    }
+
+    nav ul li a {
+        text-decoration: none; /* Eliminar el subrayado del enlace */
+        color: #fff; /* Color del texto del enlace */
+        transition: color 0.3s ease; /* Animación de transición */
+    }
+
+    nav ul li a:hover {
+        color: #17a2b8; /* Cambiar el color al pasar el mouse */
+    }
+
+    table {
+        width: 100%; /* Ancho de la tabla */
+        border-collapse: collapse; /* Colapsar los bordes de la tabla */
+        margin-top: 80px; /* Espacio superior para evitar la superposición con el encabezado */
+    }
+
+    th, td {
+        border: 1px solid #ddd; /* Borde de la celda */
+        padding: 10px; /* Añadir espacio alrededor del contenido */
+    }
+
+    th {
+        background-color: #343a40; /* Color de fondo del encabezado de columna */
+        color: #fff; /* Color del texto del encabezado de columna */
+    }
+
+    .reserve-button {
+        background-color: #28a745; /* Color de fondo del botón */
+        color: #fff; /* Color del texto del botón */
+        border: none; /* Sin borde */
+        border-radius: 4px; /* Bordes redondeados */
+        padding: 10px 20px; /* Añadir relleno al botón */
+        cursor: pointer; /* Cambia el cursor */
+    }
+
+    .reserve-button:hover {
+        background-color: #218838; /* Cambiar el color al pasar el mouse */
+    }
+
+    /* Estilos para mesas reservadas */
+    .reserved {
+        background-color: #ffc107; /* Color de fondo para mesas reservadas */
+        color: #000; /* Color del texto */
+        padding: 5px 10px; /* Añadir relleno */
+        border-radius: 4px; /* Bordes redondeados */
+    }
+</style>

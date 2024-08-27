@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <header>
+        {% include "header.html" %}
+        <div class="banner">
+            <h1>El MIRADOR</h1>
+            <p>La felicidad son esos pequeños momentos</p>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="?accion=login">Inicio Sesion</a></li>
+                <li><a href="?accion=reservar">Reservar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+        
+        </div>
+    </section>
+    <footer>
+        {% include "footer.html" %}
+    </footer>
+</body>
+</html>
+<style>
+    
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner {
+    text-align: center;
+}
+
+body {
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina el relleno predeterminado */
+    font-family: Arial, sans-serif; /* Fuente predeterminada */
+    background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/1b/5f/1e/ab/el-mirador-terrace-at.jpg);
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    height: 100vh; /* Establece la altura del cuerpo al 100% del viewport height */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    color: white; /* Color del texto */
+}
+
+nav {
+    margin-top: 20px;
+    background-color: #333; /* Cambia esto al color de fondo deseado */
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    padding: 10px 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu li a:hover {
+    color: #ccc; /* Cambia esto al color deseado al pasar el mouse */
+}
+
+
+</style>

@@ -1,0 +1,26 @@
+6/5/2024
+
+Instalaciones requeridas:
+python  
+Django  (framework)
+db browser(manejador de base de datos)
+
+En el archivo correspondiente, se han establecido las siguientes credenciales para 
+acceder como administrador:(Iniciar sesion)
+
+Usuario: juan
+Contraseña: juan1234
+Estas credenciales son necesarias para iniciar sesión como administrador en el sistema.
+
+
+El archivo está disponible para su revisión y modificación según sea necesario. 
+
+
+A mejorar
+Se puede modificar las validaciones al momento de asignar las reservas ya que puede reservar a 
+cualquier hora y dia existentes, no esta implementada la parte de eliminar administradores
+ni modificar desde administrador.
+
+
+Atentamente,
+JUAN CESPEDES

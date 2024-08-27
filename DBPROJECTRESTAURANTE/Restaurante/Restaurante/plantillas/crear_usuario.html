@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,400&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <title>Registrar Persona</title>
+</head>
+<body>
+    <header> 
+    </header>
+
+    <div class="credenciales">
+        <h1 style="text-align: center;">REGISTRO</h1>
+        <form method="POST">
+
+            {% csrf_token %} <!--PARA TEMAS DE SEGURIDAD CON EL POST-->
+            {{ formulario.as_p }} <!--GENERA FORMULARIO-->
+            <div class="botones">
+                <input type="submit" value="Registrarse" class="Registrarse">
+                <div style="margin-top: 10px; text-align: center;">
+                    <a href="?accion=admin" class="Volver">Volver</a>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+<style>
+    body {
+        background: linear-gradient(to bottom, #2196F3, #64B5F6, #BBDEFB);
+        font-family: 'Lato', sans-serif;
+        background-size: cover;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    
+    header {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(63, 115, 172);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        color: rgb(228, 235, 232);
+        border-radius: 4px;
+    }
+    
+    .iniciar_sesion, .Registrarse {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 4px;
+        border: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .iniciar_sesion {
+        background-color: #0fdd15;
+        color: #fff;
+    }
+    
+    .iniciar_sesion:hover {
+        background-color: #45a049;
+    }
+    
+    .Registrarse {
+        background-color: #4ac41a;
+        color: #fff;
+    }
+    
+    .Registrarse:hover {
+        background-color: #0ce617;
+    }
+    
+    
+    .credenciales {
+        width: 320px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .usuario1, .telefono1, .contrasena1, .nombre1 {
+        width: calc(100% - 24px);
+        margin-bottom: 15px;
+    }
+    
+    input {
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 100%;
+        box-sizing: border-box;
+    }
+        
+</style>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    {% include "menu_cliente.html" %}
+    <div class="container">
+        <div class="menu-item">
+            <h2>Plato Principal</h2>
+            <div class="bg-image bg-image-1"></div>
+            <p>INGREDIENTES (4 pers.):
+                - 500 g de solomillo de cordero
+                - 1 ajo
+                - Tomillo fresco
+                - Albahaca fresca
+                - Perejil fresco
+                - Cebollino fresco
+                - 1 cucharada de miel
+                - 1 cuch de mostaza suave
+                - 1 cucharadita de azúcar
+                - 1/2 kg de chalotas
+                - 20 g de mantequilla</p>
+            <p>Precio: $15.99</p>
+        </div>
+
+        <div class="menu-item">
+            <h2>Entrada</h2>
+            <div class="bg-image bg-image-2"></div>
+            <p>INGREDIENTES (4 pers.):
+                - 1 anguila
+                - 1 cucharada de sésamo tostado
+                - 0,75 dl de salsa de soja
+                - 0,5 dl de vinagre de arroz
+                - 2 cucharadas de azúcar moreno
+                - Jengibre
+                - 1 cucharadita de aceite de sésamo</p>
+            <p>Precio: $8.99</p> 
+        </div>
+
+        <div class="menu-item">
+            <h2>Postre</h2>
+            <div class="bg-image bg-image-3"></div>
+            <p>Ingredientes
+                Para el jarabe neutro
+                1500 g de azúcar.
+                1.5 lt de agua.
+                Para la gelatina de mango
+                500 g de pulpa de mango.
+                1 lt de jarabe neutro.
+                25 g de grenetina.
+                150 ml de agua fría.
+                Para la gelatina de fresa
+                500 g de pulpa de fresa.
+                1 lt de jarabe neutro.
+                25 g de grenetina.
+                150 ml de agua fría.
+                Para la gelatina de leche
+                1 lt de leche.
+                500 ml de crema para batir.
+                240 ml de leche condensada.
+                25 g de grenetina.
+                150 ml de agua..</p>
+            <p>Precio: $6.99</p>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    /* Estilos generales */
+body {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu-item h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.menu-item p {
+    color: #666;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+
+/* Estilos específicos de las imágenes de fondo */
+.bg-image {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    width: 500px; /* Ajusta el ancho de la imagen */
+    height: 300px; /* Ajusta la altura de la imagen */
+    margin: 0 auto 20px; /* Centra y agrega margen */
+}
+
+.bg-image-1 {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/solomillo-de-cordero-al-horno-con-costra-verde-y-chalotas-1598012399.jpg?crop=1xw:1xh;center,top&resize=980:*');
+}
+
+.bg-image-2 {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/anguila-teriyaki-con-sesamo-1533728493.jpg?crop=1xw:1xh;center,top&resize=980:*');
+}
+
+.bg-image-3 {
+        background-image: url('https://aprende.com/wp-content/uploads/2020/10/postre-facil-gelatina-de-mosaico.jpg');
+    }
+
+</style>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Barra de menú */
+        .reservas-menu {
+            background-color: #000000;
+            color: #fff;
+            padding: 5px 0; /* Reducir el padding */
+            text-align: center;
+            margin-top: 20px; /* Espacio entre el header y el elemento reservas-menu */
+        }
+        
+        .reservas-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .reservas-menu ul li {
+            display: inline;
+            margin-right: 15px; /* Reducir el margen entre elementos */
+        }
+
+        .reservas-menu ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px; /* Reducir el tamaño de fuente */
+        }
+
+        .reservas-menu ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Dot */
+        .dot {
+            font-size: 8px; /* Reducir el tamaño del punto */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="reservas-menu">
+        <ul>
+            <li><a href="?accion=crear_usuario"><span class="dot">•</span> Crear usuario</a></li>
+            <li><a href="?accion=listar_reservas"><span class="dot">•</span> Menu Reservas</a></li>
+            <li><a href="?accion=inicio"><span class="dot">•</span> Salir</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
